@@ -1,0 +1,18 @@
+// Mixins compartilhados para controles e componentes interativos
+// (ds-button, ds-input, ds-select, etc.)
+
+@mixin control-size($size) {
+  @if $size == 'sm' {
+    font-size: var(--sds-typography-body-size-small, 14px);
+    padding: var(--sds-size-space-100, 4px) var(--sds-size-space-200, 8px);
+    min-height: 28px;
+  } @else if $size == 'md' {
+    font-size: var(--sds-typography-body-size-medium, 16px);
+    padding: var(--sds-size-space-200, 8px) var(--sds-size-space-400, 16px);
+    min-height: 36px;
+  } @else if $size == 'lg' {
+    font-size: var(--sds-typography-body-size-large, 20px);
+    padding: var(--sds-size-space-300, 12px) var(--sds-size-space-600, 24px);
+    min-height: 44px;
+  }
+}
