@@ -5,7 +5,36 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ButtonHierarchy, ButtonSize, ButtonVariant } from "./components/ds-button/ds-button";
+export { ButtonHierarchy, ButtonSize, ButtonVariant } from "./components/ds-button/ds-button";
 export namespace Components {
+    interface DsButton {
+        /**
+          * Estado desabilitado. Quando ativo, aplica os tokens Disabled semânticos.
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * Nível de ênfase visual (hierarquia): - 'default': preenchimento sólido (Default / :Hover na matriz) - 'secondary': preenchimento suave com contorno (Secondary / :Hover na matriz) - 'tertiary': preenchimento sutil / ghost (Tertiary / :Hover na matriz)
+          * @default 'default'
+         */
+        "hierarchy": ButtonHierarchy;
+        /**
+          * Tamanho do botão: 'sm' | 'md' | 'lg'
+          * @default 'md'
+         */
+        "size": ButtonSize;
+        /**
+          * Tipo HTML nativo do botão.
+          * @default 'button'
+         */
+        "type": 'button' | 'submit' | 'reset';
+        /**
+          * Intenção semântica / variante de cor do botão. Suporta as categorias oficiais do design system: brand, neutral, success, warning, danger, base. 'primary' é mantido como alias para 'brand' para retrocompatibilidade.
+          * @default 'brand'
+         */
+        "variant": ButtonVariant | 'primary';
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +51,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLDsButtonElement extends Components.DsButton, HTMLStencilElement {
+    }
+    var HTMLDsButtonElement: {
+        prototype: HTMLDsButtonElement;
+        new (): HTMLDsButtonElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +64,38 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "ds-button": HTMLDsButtonElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface DsButton {
+        /**
+          * Estado desabilitado. Quando ativo, aplica os tokens Disabled semânticos.
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * Nível de ênfase visual (hierarquia): - 'default': preenchimento sólido (Default / :Hover na matriz) - 'secondary': preenchimento suave com contorno (Secondary / :Hover na matriz) - 'tertiary': preenchimento sutil / ghost (Tertiary / :Hover na matriz)
+          * @default 'default'
+         */
+        "hierarchy"?: ButtonHierarchy;
+        /**
+          * Tamanho do botão: 'sm' | 'md' | 'lg'
+          * @default 'md'
+         */
+        "size"?: ButtonSize;
+        /**
+          * Tipo HTML nativo do botão.
+          * @default 'button'
+         */
+        "type"?: 'button' | 'submit' | 'reset';
+        /**
+          * Intenção semântica / variante de cor do botão. Suporta as categorias oficiais do design system: brand, neutral, success, warning, danger, base. 'primary' é mantido como alias para 'brand' para retrocompatibilidade.
+          * @default 'brand'
+         */
+        "variant"?: ButtonVariant | 'primary';
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +111,13 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
 
+    interface DsButtonAttributes {
+        "variant": ButtonVariant | 'primary';
+        "hierarchy": ButtonHierarchy;
+        "size": ButtonSize;
+        "disabled": boolean;
+        "type": 'button' | 'submit' | 'reset';
+    }
     interface MyComponentAttributes {
         "first": string;
         "middle": string;
@@ -55,6 +125,7 @@ declare namespace LocalJSX {
     }
 
     interface IntrinsicElements {
+        "ds-button": Omit<DsButton, keyof DsButtonAttributes> & { [K in keyof DsButton & keyof DsButtonAttributes]?: DsButton[K] } & { [K in keyof DsButton & keyof DsButtonAttributes as `attr:${K}`]?: DsButtonAttributes[K] } & { [K in keyof DsButton & keyof DsButtonAttributes as `prop:${K}`]?: DsButton[K] };
         "my-component": Omit<MyComponent, keyof MyComponentAttributes> & { [K in keyof MyComponent & keyof MyComponentAttributes]?: MyComponent[K] } & { [K in keyof MyComponent & keyof MyComponentAttributes as `attr:${K}`]?: MyComponentAttributes[K] } & { [K in keyof MyComponent & keyof MyComponentAttributes as `prop:${K}`]?: MyComponent[K] };
     }
 }
@@ -62,6 +133,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ds-button": LocalJSX.IntrinsicElements["ds-button"] & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
             "my-component": LocalJSX.IntrinsicElements["my-component"] & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
