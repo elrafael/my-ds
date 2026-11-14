@@ -4,8 +4,11 @@ import { angularOutputTarget } from '@stencil/angular-output-target';
 
 export const config: Config = {
   namespace: 'my-ds',
+  globalStyle: 'src/styles/_tokens.scss',
   plugins: [
-    sass()
+    sass({
+      includePaths: ['src/styles'],
+    })
   ],
   outputTargets: [
     {
