@@ -14,6 +14,10 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      copy: [
+        { src: '../node_modules/@fontsource-variable/inter/files/*-wght-*.woff2', dest: 'fonts', warn: true },
+        { src: '../node_modules/@fontsource-variable/inter/LICENSE', dest: 'fonts/INTER-LICENSE', warn: true },
+      ],
     },
     {
       type: 'dist-custom-elements',
@@ -26,6 +30,10 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
+      copy: [
+        { src: '../node_modules/@fontsource-variable/inter/files/*-wght-*.woff2', dest: 'build/fonts', warn: true },
+        { src: '../node_modules/@fontsource-variable/inter/LICENSE', dest: 'build/fonts/INTER-LICENSE', warn: true },
+      ],
     },
     angularOutputTarget({
       componentCorePackage: 'my-ds',
