@@ -1,0 +1,126 @@
+@use 'sass:map';
+@use 'mixins/control-sizes' as *;
+
+:host {
+  display: inline-block;
+}
+
+.ds-button {
+  box-sizing: border-box;
+  font-family: var(--sds-typography-body-font-family, inherit);
+  font-weight: var(--sds-typography-body-font-weight-regular, 500);
+  line-height: 1.25;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sds-size-space-200, 8px);
+  border: var(--sds-size-stroke-border, 1px) solid transparent;
+  border-radius: var(--sds-size-radius-200, 8px);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+  &:focus-visible {
+    outline: var(--sds-size-stroke-focus-ring, 2px) solid var(--sds-color-border-brand-default, #0a5cff);
+    outline-offset: 2px;
+  }
+
+  // --- Tamanhos compartilhados (sm, md, lg) ---
+  &--sm { @include control-size('sm'); }
+  &--md { @include control-size('md'); }
+  &--lg { @include control-size('lg'); }
+
+  // --- Matriz de Variantes Semânticas e Hierarquias (Figma) ---
+  // Mapeamento explícito para compatibilidade total e limpeza de avisos do Sass
+  $variant-configs: (
+    'brand': (
+      'token': 'brand',
+      'on-color': 'brand-on-brand',
+      'hover': 'hover',
+      'border-default': transparent,
+    ),
+    'neutral': (
+      'token': 'neutral',
+      'on-color': 'neutral-on-neutral',
+      'hover': 'hover',
+      'border-default': transparent,
+    ),
+    'success': (
+      'token': 'positive',
+      'on-color': 'positive-on-positive',
+      'hover': 'hover',
+      'border-default': transparent,
+    ),
+    'warning': (
+      'token': 'warning',
+      'on-color': 'warning-on-warning',
+      'hover': 'hover',
+      'border-default': transparent,
+    ),
+    'danger': (
+      'token': 'danger',
+      'on-color': 'danger-on-danger',
+      'hover': 'hover',
+      'border-default': transparent,
+    ),
+    'base': (
+      'token': 'default',
+      'on-color': 'default-default',
+      'hover': 'default-hover',
+      'border-default': var(--sds-color-border-default-default),
+    ),
+  );
+
+  @each $v, $cfg in $variant-configs {
+    $token-name: map.get($cfg, 'token');
+    $on-color: map.get($cfg, 'on-color');
+    $hover-token: map.get($cfg, 'hover');
+    $border-def: map.get($cfg, 'border-default');
+
+    // 1. Default (preenchimento sólido)
+    &--#{$v}#{&}--default {
+      background-color: var(--sds-color-background-#{$token-name}-default);
+      color: var(--sds-color-text-#{$on-color});
+      border-color: #{$border-def};
+
+      &:hover:not(:disabled) {
+        background-color: var(--sds-color-background-#{$token-name}-#{$hover-token});
+      }
+    }
+
+    // 2. Secondary (suave com borda)
+    &--#{$v}#{&}--secondary {
+      background-color: var(--sds-color-background-#{$token-name}-secondary);
+      color: var(--sds-color-text-#{$token-name}-default);
+      border-color: var(--sds-color-border-#{$token-name}-default, var(--sds-color-border-#{$token-name}-secondary));
+
+      &:hover:not(:disabled) {
+        background-color: var(--sds-color-background-#{$token-name}-secondary-hover);
+      }
+    }
+
+    // 3. Tertiary (ghost / sem borda)
+    &--#{$v}#{&}--tertiary {
+      background-color: var(--sds-color-background-#{$token-name}-tertiary);
+      color: var(--sds-color-text-#{$token-name}-default);
+      border-color: transparent;
+
+      &:hover:not(:disabled) {
+        background-color: var(--sds-color-background-#{$token-name}-tertiary-hover);
+      }
+    }
+  }
+
+  // --- Estado Disabled (linha Disabled da matriz) ---
+  &:disabled {
+    background-color: var(--sds-color-background-disabled-default) !important;
+    color: var(--sds-color-text-disabled-default) !important;
+    border-color: var(--sds-color-border-disabled-default) !important;
+    cursor: not-allowed;
+    opacity: 1;
+  }
+}
+
+
+

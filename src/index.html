@@ -3,12 +3,87 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <link rel="stylesheet" href="/build/my-ds.css" />
     <title>Stencil Component Starter</title>
 
     <script type="module" src="/build/my-ds.esm.js"></script>
     <script nomodule src="/build/my-ds.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2rem;
+        background: var(--sds-color-background-default-default, #fff);
+        color: var(--sds-color-text-default-default, #000);
+      }
+      .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      .row {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+      .label {
+        width: 100px;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
-    <my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>
+    <h1>DS Button - Variantes Semânticas (Figma Matrix)</h1>
+
+    <div class="grid">
+      <div class="row">
+        <span class="label">Brand:</span>
+        <ds-button variant="brand" hierarchy="default">Brand Default</ds-button>
+        <ds-button variant="brand" hierarchy="secondary">Brand Secondary</ds-button>
+        <ds-button variant="brand" hierarchy="tertiary">Brand Tertiary</ds-button>
+      </div>
+
+      <div class="row">
+        <span class="label">Neutral:</span>
+        <ds-button variant="neutral" hierarchy="default">Neutral Default</ds-button>
+        <ds-button variant="neutral" hierarchy="secondary">Neutral Secondary</ds-button>
+        <ds-button variant="neutral" hierarchy="tertiary">Neutral Tertiary</ds-button>
+      </div>
+
+      <div class="row">
+        <span class="label">Success:</span>
+        <ds-button variant="success" hierarchy="default">Success Default</ds-button>
+        <ds-button variant="success" hierarchy="secondary">Success Secondary</ds-button>
+        <ds-button variant="success" hierarchy="tertiary">Success Tertiary</ds-button>
+      </div>
+
+      <div class="row">
+        <span class="label">Warning:</span>
+        <ds-button variant="warning" hierarchy="default">Warning Default</ds-button>
+        <ds-button variant="warning" hierarchy="secondary">Warning Secondary</ds-button>
+        <ds-button variant="warning" hierarchy="tertiary">Warning Tertiary</ds-button>
+      </div>
+
+      <div class="row">
+        <span class="label">Danger:</span>
+        <ds-button variant="danger" hierarchy="default">Danger Default</ds-button>
+        <ds-button variant="danger" hierarchy="secondary">Danger Secondary</ds-button>
+        <ds-button variant="danger" hierarchy="tertiary">Danger Tertiary</ds-button>
+      </div>
+
+      <div class="row">
+        <span class="label">Base:</span>
+        <ds-button variant="base" hierarchy="default">Base Default</ds-button>
+        <ds-button variant="base" hierarchy="secondary">Base Secondary</ds-button>
+        <ds-button variant="base" hierarchy="tertiary">Base Tertiary</ds-button>
+      </div>
+
+      <div class="row">
+        <span class="label">Disabled:</span>
+        <ds-button variant="brand" disabled>Brand Disabled</ds-button>
+        <ds-button variant="neutral" disabled>Neutral Disabled</ds-button>
+        <ds-button variant="danger" disabled>Danger Disabled</ds-button>
+      </div>
+    </div>
   </body>
 </html>
