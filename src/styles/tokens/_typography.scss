@@ -1,0 +1,52 @@
+// Gerado por scripts/tokens-to-scss.mjs a partir de "Typography.tokens.json". Não editar à mão.
+
+@use 'typography-primitives' as *;
+
+// Title Hero
+$typography-title-hero-font-family: $typography-family-sans !default;
+$typography-title-hero-size: $typography-scale-10 !default;
+$typography-title-hero-font-weight: $typography-weight-bold !default;
+
+// Title Page
+$typography-title-page-font-family: $typography-family-sans !default;
+$typography-title-page-size-small: $typography-scale-07 !default;
+$typography-title-page-size-base: $typography-scale-08 !default;
+$typography-title-page-size-large: $typography-scale-09 !default;
+$typography-title-page-font-weight: $typography-weight-bold !default;
+
+// Subtitle
+$typography-subtitle-font-family: $typography-family-sans !default;
+$typography-subtitle-size-small: $typography-scale-05 !default;
+$typography-subtitle-size-base: $typography-scale-06 !default;
+$typography-subtitle-size-large: $typography-scale-07 !default;
+$typography-subtitle-font-weight: $typography-weight-regular !default;
+
+// Heading
+$typography-heading-font-family: $typography-family-sans !default;
+$typography-heading-size-small: $typography-scale-04 !default;
+$typography-heading-size-base: $typography-scale-05 !default;
+$typography-heading-size-large: $typography-scale-06 !default;
+$typography-heading-font-weight: $typography-weight-semibold !default;
+
+// Subheading
+$typography-subheading-font-family: $typography-family-sans !default;
+$typography-subheading-size-small: $typography-scale-03 !default;
+$typography-subheading-size-medium: $typography-scale-04 !default;
+$typography-subheading-size-large: $typography-scale-05 !default;
+$typography-subheading-font-weight: $typography-weight-regular !default;
+
+// Body
+$typography-body-font-family: $typography-family-sans !default;
+$typography-body-size-small: $typography-scale-02 !default;
+$typography-body-size-medium: $typography-scale-03 !default;
+$typography-body-size-large: $typography-scale-04 !default;
+$typography-body-font-weight-regular: $typography-weight-regular !default;
+$typography-body-font-weight-strong: $typography-weight-semibold !default;
+$typography-body-font-style-italic: $typography-weight-regular-italic !default;
+
+// Code
+$typography-code-font-family: $typography-family-mono !default;
+$typography-code-size-small: $typography-body-size-small !default;
+$typography-code-size-base: $typography-body-size-medium !default;
+$typography-code-size-large: $typography-body-size-large !default;
+$typography-code-font-weight: $typography-body-font-weight-regular !default;

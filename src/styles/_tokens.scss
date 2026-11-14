@@ -1,0 +1,413 @@
+// Gerado automaticamente com base nos tokens semânticos exportados do Figma.
+// Não editar manualmente.
+
+@use "tokens/sds-light" as light;
+@use "tokens/sds-dark" as dark;
+@use "tokens/sizes" as sizes;
+@use "tokens/typography" as typo;
+@use "tokens/colors-primitives" as color;
+
+:root {
+  // Primitivo legado para compatibilidade
+  --ds-color-brand-800: #{color.$colors-brand-800};
+
+  // --- Sizes (Espaçamentos, Raios, Sombras/Profundidade, Stroke) ---
+
+  // Sizes: Space
+  --sds-size-space-0: #{sizes.$sizes-space-0}px;
+  --sds-size-space-100: #{sizes.$sizes-space-100}px;
+  --sds-size-space-150: #{sizes.$sizes-space-150}px;
+  --sds-size-space-200: #{sizes.$sizes-space-200}px;
+  --sds-size-space-300: #{sizes.$sizes-space-300}px;
+  --sds-size-space-400: #{sizes.$sizes-space-400}px;
+  --sds-size-space-600: #{sizes.$sizes-space-600}px;
+  --sds-size-space-800: #{sizes.$sizes-space-800}px;
+  --sds-size-space-1200: #{sizes.$sizes-space-1200}px;
+  --sds-size-space-1600: #{sizes.$sizes-space-1600}px;
+  --sds-size-space-2400: #{sizes.$sizes-space-2400}px;
+  --sds-size-space-4000: #{sizes.$sizes-space-4000}px;
+  --sds-size-space-050: #{sizes.$sizes-space-050}px;
+  --sds-size-space-negative-100: #{sizes.$sizes-space-negative-100}px;
+  --sds-size-space-negative-200: #{sizes.$sizes-space-negative-200}px;
+  --sds-size-space-negative-300: #{sizes.$sizes-space-negative-300}px;
+  --sds-size-space-negative-400: #{sizes.$sizes-space-negative-400}px;
+  --sds-size-space-negative-600: #{sizes.$sizes-space-negative-600}px;
+
+  // Sizes: Radius
+  --sds-size-radius-100: #{sizes.$sizes-radius-100}px;
+  --sds-size-radius-200: #{sizes.$sizes-radius-200}px;
+  --sds-size-radius-400: #{sizes.$sizes-radius-400}px;
+  --sds-size-radius-full: #{sizes.$sizes-radius-full}px;
+
+  // Sizes: Blur
+  --sds-size-blur-100: #{sizes.$sizes-blur-100}px;
+
+  // Sizes: Depth
+  --sds-size-depth-0: #{sizes.$sizes-depth-0}px;
+  --sds-size-depth-100: #{sizes.$sizes-depth-100}px;
+  --sds-size-depth-200: #{sizes.$sizes-depth-200}px;
+  --sds-size-depth-400: #{sizes.$sizes-depth-400}px;
+  --sds-size-depth-800: #{sizes.$sizes-depth-800}px;
+  --sds-size-depth-1200: #{sizes.$sizes-depth-1200}px;
+  --sds-size-depth-025: #{sizes.$sizes-depth-025}px;
+  --sds-size-depth-negative-025: #{sizes.$sizes-depth-negative-025}px;
+  --sds-size-depth-negative-100: #{sizes.$sizes-depth-negative-100}px;
+  --sds-size-depth-negative-200: #{sizes.$sizes-depth-negative-200}px;
+  --sds-size-depth-negative-400: #{sizes.$sizes-depth-negative-400}px;
+  --sds-size-depth-negative-800: #{sizes.$sizes-depth-negative-800}px;
+  --sds-size-depth-negative-1200: #{sizes.$sizes-depth-negative-1200}px;
+
+  // Sizes: Stroke
+  --sds-size-stroke-border: #{sizes.$sizes-stroke-border}px;
+  --sds-size-stroke-focus-ring: #{sizes.$sizes-stroke-focus-ring}px;
+
+  // Sizes: Icon
+  --sds-size-icon-small: #{sizes.$sizes-icon-small}px;
+  --sds-size-icon-medium: #{sizes.$sizes-icon-medium}px;
+  --sds-size-icon-large: #{sizes.$sizes-icon-large}px;
+
+  // --- Tipografia Semântica ---
+
+  // Typography: Title Hero
+  --sds-typography-title-hero-font-family: #{typo.$typography-title-hero-font-family};
+  --sds-typography-title-hero-size: #{typo.$typography-title-hero-size}px;
+  --sds-typography-title-hero-font-weight: #{typo.$typography-title-hero-font-weight};
+
+  // Typography: Title Page
+  --sds-typography-title-page-font-family: #{typo.$typography-title-page-font-family};
+  --sds-typography-title-page-size-small: #{typo.$typography-title-page-size-small}px;
+  --sds-typography-title-page-size-base: #{typo.$typography-title-page-size-base}px;
+  --sds-typography-title-page-size-large: #{typo.$typography-title-page-size-large}px;
+  --sds-typography-title-page-font-weight: #{typo.$typography-title-page-font-weight};
+
+  // Typography: Subtitle
+  --sds-typography-subtitle-font-family: #{typo.$typography-subtitle-font-family};
+  --sds-typography-subtitle-size-small: #{typo.$typography-subtitle-size-small}px;
+  --sds-typography-subtitle-size-base: #{typo.$typography-subtitle-size-base}px;
+  --sds-typography-subtitle-size-large: #{typo.$typography-subtitle-size-large}px;
+  --sds-typography-subtitle-font-weight: #{typo.$typography-subtitle-font-weight};
+
+  // Typography: Heading
+  --sds-typography-heading-font-family: #{typo.$typography-heading-font-family};
+  --sds-typography-heading-size-small: #{typo.$typography-heading-size-small}px;
+  --sds-typography-heading-size-base: #{typo.$typography-heading-size-base}px;
+  --sds-typography-heading-size-large: #{typo.$typography-heading-size-large}px;
+  --sds-typography-heading-font-weight: #{typo.$typography-heading-font-weight};
+
+  // Typography: Subheading
+  --sds-typography-subheading-font-family: #{typo.$typography-subheading-font-family};
+  --sds-typography-subheading-size-small: #{typo.$typography-subheading-size-small}px;
+  --sds-typography-subheading-size-medium: #{typo.$typography-subheading-size-medium}px;
+  --sds-typography-subheading-size-large: #{typo.$typography-subheading-size-large}px;
+  --sds-typography-subheading-font-weight: #{typo.$typography-subheading-font-weight};
+
+  // Typography: Body
+  --sds-typography-body-font-family: #{typo.$typography-body-font-family};
+  --sds-typography-body-size-small: #{typo.$typography-body-size-small}px;
+  --sds-typography-body-size-medium: #{typo.$typography-body-size-medium}px;
+  --sds-typography-body-size-large: #{typo.$typography-body-size-large}px;
+  --sds-typography-body-font-weight-regular: #{typo.$typography-body-font-weight-regular};
+  --sds-typography-body-font-weight-strong: #{typo.$typography-body-font-weight-strong};
+  --sds-typography-body-font-style-italic: #{typo.$typography-body-font-style-italic};
+
+  // Typography: Code
+  --sds-typography-code-font-family: #{typo.$typography-code-font-family};
+  --sds-typography-code-size-small: #{typo.$typography-code-size-small}px;
+  --sds-typography-code-size-base: #{typo.$typography-code-size-base}px;
+  --sds-typography-code-size-large: #{typo.$typography-code-size-large}px;
+  --sds-typography-code-font-weight: #{typo.$typography-code-font-weight};
+
+  // --- Cores Semânticas (Modo Claro / Padrão) ---
+
+  // Color Background
+  --sds-color-background-default-default: #{light.$sds-light-background-default-default};
+  --sds-color-background-default-default-hover: #{light.$sds-light-background-default-default-hover};
+  --sds-color-background-default-secondary: #{light.$sds-light-background-default-secondary};
+  --sds-color-background-default-secondary-hover: #{light.$sds-light-background-default-secondary-hover};
+  --sds-color-background-default-tertiary: #{light.$sds-light-background-default-tertiary};
+  --sds-color-background-default-tertiary-hover: #{light.$sds-light-background-default-tertiary-hover};
+  --sds-color-background-neutral-default: #{light.$sds-light-background-neutral-default};
+  --sds-color-background-neutral-hover: #{light.$sds-light-background-neutral-hover};
+  --sds-color-background-neutral-secondary: #{light.$sds-light-background-neutral-secondary};
+  --sds-color-background-neutral-secondary-hover: #{light.$sds-light-background-neutral-secondary-hover};
+  --sds-color-background-neutral-tertiary: #{light.$sds-light-background-neutral-tertiary};
+  --sds-color-background-neutral-tertiary-hover: #{light.$sds-light-background-neutral-tertiary-hover};
+  --sds-color-background-brand-default: #{light.$sds-light-background-brand-default};
+  --sds-color-background-brand-hover: #{light.$sds-light-background-brand-hover};
+  --sds-color-background-brand-secondary: #{light.$sds-light-background-brand-secondary};
+  --sds-color-background-brand-secondary-hover: #{light.$sds-light-background-brand-secondary-hover};
+  --sds-color-background-brand-tertiary: #{light.$sds-light-background-brand-tertiary};
+  --sds-color-background-brand-tertiary-hover: #{light.$sds-light-background-brand-tertiary-hover};
+  --sds-color-background-positive-default: #{light.$sds-light-background-positive-default};
+  --sds-color-background-positive-hover: #{light.$sds-light-background-positive-hover};
+  --sds-color-background-positive-secondary: #{light.$sds-light-background-positive-secondary};
+  --sds-color-background-positive-secondary-hover: #{light.$sds-light-background-positive-secondary-hover};
+  --sds-color-background-positive-tertiary: #{light.$sds-light-background-positive-tertiary};
+  --sds-color-background-positive-tertiary-hover: #{light.$sds-light-background-positive-tertiary-hover};
+  --sds-color-background-warning-default: #{light.$sds-light-background-warning-default};
+  --sds-color-background-warning-hover: #{light.$sds-light-background-warning-hover};
+  --sds-color-background-warning-secondary: #{light.$sds-light-background-warning-secondary};
+  --sds-color-background-warning-secondary-hover: #{light.$sds-light-background-warning-secondary-hover};
+  --sds-color-background-warning-tertiary: #{light.$sds-light-background-warning-tertiary};
+  --sds-color-background-warning-tertiary-hover: #{light.$sds-light-background-warning-tertiary-hover};
+  --sds-color-background-danger-default: #{light.$sds-light-background-danger-default};
+  --sds-color-background-danger-hover: #{light.$sds-light-background-danger-hover};
+  --sds-color-background-danger-secondary: #{light.$sds-light-background-danger-secondary};
+  --sds-color-background-danger-secondary-hover: #{light.$sds-light-background-danger-secondary-hover};
+  --sds-color-background-danger-tertiary: #{light.$sds-light-background-danger-tertiary};
+  --sds-color-background-danger-tertiary-hover: #{light.$sds-light-background-danger-tertiary-hover};
+  --sds-color-background-disabled-default: #{light.$sds-light-background-disabled-default};
+  --sds-color-background-utilities-scrim: #{light.$sds-light-background-utilities-scrim};
+  --sds-color-background-utilities-blanket: #{light.$sds-light-background-utilities-blanket};
+  --sds-color-background-utilities-overlay: #{light.$sds-light-background-utilities-overlay};
+  --sds-color-background-utilities-measurement: #{light.$sds-light-background-utilities-measurement};
+
+  // Color Text
+  --sds-color-text-default-default: #{light.$sds-light-text-default-default};
+  --sds-color-text-default-secondary: #{light.$sds-light-text-default-secondary};
+  --sds-color-text-default-tertiary: #{light.$sds-light-text-default-tertiary};
+  --sds-color-text-neutral-default: #{light.$sds-light-text-neutral-default};
+  --sds-color-text-neutral-secondary: #{light.$sds-light-text-neutral-secondary};
+  --sds-color-text-neutral-tertiary: #{light.$sds-light-text-neutral-tertiary};
+  --sds-color-text-neutral-on-neutral: #{light.$sds-light-text-neutral-on-neutral};
+  --sds-color-text-neutral-on-neutral-secondary: #{light.$sds-light-text-neutral-on-neutral-secondary};
+  --sds-color-text-neutral-on-neutral-tertiary: #{light.$sds-light-text-neutral-on-neutral-tertiary};
+  --sds-color-text-brand-default: #{light.$sds-light-text-brand-default};
+  --sds-color-text-brand-secondary: #{light.$sds-light-text-brand-secondary};
+  --sds-color-text-brand-tertiary: #{light.$sds-light-text-brand-tertiary};
+  --sds-color-text-brand-on-brand: #{light.$sds-light-text-brand-on-brand};
+  --sds-color-text-brand-on-brand-secondary: #{light.$sds-light-text-brand-on-brand-secondary};
+  --sds-color-text-brand-on-brand-tertiary: #{light.$sds-light-text-brand-on-brand-tertiary};
+  --sds-color-text-positive-default: #{light.$sds-light-text-positive-default};
+  --sds-color-text-positive-secondary: #{light.$sds-light-text-positive-secondary};
+  --sds-color-text-positive-tertiary: #{light.$sds-light-text-positive-tertiary};
+  --sds-color-text-positive-on-positive: #{light.$sds-light-text-positive-on-positive};
+  --sds-color-text-positive-on-positive-secondary: #{light.$sds-light-text-positive-on-positive-secondary};
+  --sds-color-text-positive-on-positive-tertiary: #{light.$sds-light-text-positive-on-positive-tertiary};
+  --sds-color-text-warning-default: #{light.$sds-light-text-warning-default};
+  --sds-color-text-warning-secondary: #{light.$sds-light-text-warning-secondary};
+  --sds-color-text-warning-tertiary: #{light.$sds-light-text-warning-tertiary};
+  --sds-color-text-warning-on-warning: #{light.$sds-light-text-warning-on-warning};
+  --sds-color-text-warning-on-warning-secondary: #{light.$sds-light-text-warning-on-warning-secondary};
+  --sds-color-text-warning-on-warning-tertiary: #{light.$sds-light-text-warning-on-warning-tertiary};
+  --sds-color-text-danger-default: #{light.$sds-light-text-danger-default};
+  --sds-color-text-danger-secondary: #{light.$sds-light-text-danger-secondary};
+  --sds-color-text-danger-tertiary: #{light.$sds-light-text-danger-tertiary};
+  --sds-color-text-danger-on-danger: #{light.$sds-light-text-danger-on-danger};
+  --sds-color-text-danger-on-danger-secondary: #{light.$sds-light-text-danger-on-danger-secondary};
+  --sds-color-text-danger-on-danger-tertiary: #{light.$sds-light-text-danger-on-danger-tertiary};
+  --sds-color-text-disabled-default: #{light.$sds-light-text-disabled-default};
+  --sds-color-text-disabled-on-disabled: #{light.$sds-light-text-disabled-on-disabled};
+  --sds-color-text-utilities-text-on-overlay: #{light.$sds-light-text-utilities-text-on-overlay};
+  --sds-color-text-utilities-text-on-measurement: #{light.$sds-light-text-utilities-text-on-measurement};
+
+  // Color Border
+  --sds-color-border-default-default: #{light.$sds-light-border-default-default};
+  --sds-color-border-default-secondary: #{light.$sds-light-border-default-secondary};
+  --sds-color-border-default-tertiary: #{light.$sds-light-border-default-tertiary};
+  --sds-color-border-neutral-default: #{light.$sds-light-border-neutral-default};
+  --sds-color-border-neutral-secondary: #{light.$sds-light-border-neutral-secondary};
+  --sds-color-border-neutral-tertiary: #{light.$sds-light-border-neutral-tertiary};
+  --sds-color-border-brand-default: #{light.$sds-light-border-brand-default};
+  --sds-color-border-brand-secondary: #{light.$sds-light-border-brand-secondary};
+  --sds-color-border-brand-tertiary: #{light.$sds-light-border-brand-tertiary};
+  --sds-color-border-positive-default: #{light.$sds-light-border-positive-default};
+  --sds-color-border-positive-secondary: #{light.$sds-light-border-positive-secondary};
+  --sds-color-border-positive-tertiary: #{light.$sds-light-border-positive-tertiary};
+  --sds-color-border-warning-default: #{light.$sds-light-border-warning-default};
+  --sds-color-border-warning-secondary: #{light.$sds-light-border-warning-secondary};
+  --sds-color-border-warning-tertiary: #{light.$sds-light-border-warning-tertiary};
+  --sds-color-border-danger-default: #{light.$sds-light-border-danger-default};
+  --sds-color-border-danger-secondary: #{light.$sds-light-border-danger-secondary};
+  --sds-color-border-danger-tertiary: #{light.$sds-light-border-danger-tertiary};
+  --sds-color-border-disabled-default: #{light.$sds-light-border-disabled-default};
+  --sds-color-border-utilities-measurement: #{light.$sds-light-border-utilities-measurement};
+  --sds-color-border-utilities-swatch: #{light.$sds-light-border-utilities-swatch};
+
+  // Color Icon
+  --sds-color-icon-default-default: #{light.$sds-light-icon-default-default};
+  --sds-color-icon-default-secondary: #{light.$sds-light-icon-default-secondary};
+  --sds-color-icon-default-tertiary: #{light.$sds-light-icon-default-tertiary};
+  --sds-color-icon-neutral-default: #{light.$sds-light-icon-neutral-default};
+  --sds-color-icon-neutral-secondary: #{light.$sds-light-icon-neutral-secondary};
+  --sds-color-icon-neutral-tertiary: #{light.$sds-light-icon-neutral-tertiary};
+  --sds-color-icon-neutral-on-neutral: #{light.$sds-light-icon-neutral-on-neutral};
+  --sds-color-icon-neutral-on-neutral-secondary: #{light.$sds-light-icon-neutral-on-neutral-secondary};
+  --sds-color-icon-neutral-on-neutral-tertiary: #{light.$sds-light-icon-neutral-on-neutral-tertiary};
+  --sds-color-icon-brand-default: #{light.$sds-light-icon-brand-default};
+  --sds-color-icon-brand-secondary: #{light.$sds-light-icon-brand-secondary};
+  --sds-color-icon-brand-tertiary: #{light.$sds-light-icon-brand-tertiary};
+  --sds-color-icon-brand-on-brand: #{light.$sds-light-icon-brand-on-brand};
+  --sds-color-icon-brand-on-brand-secondary: #{light.$sds-light-icon-brand-on-brand-secondary};
+  --sds-color-icon-brand-on-brand-tertiary: #{light.$sds-light-icon-brand-on-brand-tertiary};
+  --sds-color-icon-positive-default: #{light.$sds-light-icon-positive-default};
+  --sds-color-icon-positive-secondary: #{light.$sds-light-icon-positive-secondary};
+  --sds-color-icon-positive-tertiary: #{light.$sds-light-icon-positive-tertiary};
+  --sds-color-icon-positive-on-positive: #{light.$sds-light-icon-positive-on-positive};
+  --sds-color-icon-positive-on-positive-secondary: #{light.$sds-light-icon-positive-on-positive-secondary};
+  --sds-color-icon-positive-on-positive-tertiary: #{light.$sds-light-icon-positive-on-positive-tertiary};
+  --sds-color-icon-warning-default: #{light.$sds-light-icon-warning-default};
+  --sds-color-icon-warning-secondary: #{light.$sds-light-icon-warning-secondary};
+  --sds-color-icon-warning-tertiary: #{light.$sds-light-icon-warning-tertiary};
+  --sds-color-icon-warning-on-warning: #{light.$sds-light-icon-warning-on-warning};
+  --sds-color-icon-warning-on-warning-secondary: #{light.$sds-light-icon-warning-on-warning-secondary};
+  --sds-color-icon-warning-on-warning-tertiary: #{light.$sds-light-icon-warning-on-warning-tertiary};
+  --sds-color-icon-danger-default: #{light.$sds-light-icon-danger-default};
+  --sds-color-icon-danger-secondary: #{light.$sds-light-icon-danger-secondary};
+  --sds-color-icon-danger-tertiary: #{light.$sds-light-icon-danger-tertiary};
+  --sds-color-icon-danger-on-danger: #{light.$sds-light-icon-danger-on-danger};
+  --sds-color-icon-danger-on-danger-secondary: #{light.$sds-light-icon-danger-on-danger-secondary};
+  --sds-color-icon-danger-on-danger-tertiary: #{light.$sds-light-icon-danger-on-danger-tertiary};
+  --sds-color-icon-disabled-default: #{light.$sds-light-icon-disabled-default};
+  --sds-color-icon-disabled-on-disabled: #{light.$sds-light-icon-disabled-on-disabled};
+  --sds-color-icon-utilities-icon: #{light.$sds-light-icon-utilities-icon};
+  --sds-color-icon-utilities-icon-on-measurement: #{light.$sds-light-icon-utilities-icon-on-measurement};
+}
+
+[data-theme="dark"] {
+  // --- Cores Semânticas (Modo Escuro) ---
+
+  // Color Background
+  --sds-color-background-default-default: #{dark.$sds-dark-background-default-default};
+  --sds-color-background-default-default-hover: #{dark.$sds-dark-background-default-default-hover};
+  --sds-color-background-default-secondary: #{dark.$sds-dark-background-default-secondary};
+  --sds-color-background-default-secondary-hover: #{dark.$sds-dark-background-default-secondary-hover};
+  --sds-color-background-default-tertiary: #{dark.$sds-dark-background-default-tertiary};
+  --sds-color-background-default-tertiary-hover: #{dark.$sds-dark-background-default-tertiary-hover};
+  --sds-color-background-neutral-default: #{dark.$sds-dark-background-neutral-default};
+  --sds-color-background-neutral-hover: #{dark.$sds-dark-background-neutral-hover};
+  --sds-color-background-neutral-secondary: #{dark.$sds-dark-background-neutral-secondary};
+  --sds-color-background-neutral-secondary-hover: #{dark.$sds-dark-background-neutral-secondary-hover};
+  --sds-color-background-neutral-tertiary: #{dark.$sds-dark-background-neutral-tertiary};
+  --sds-color-background-neutral-tertiary-hover: #{dark.$sds-dark-background-neutral-tertiary-hover};
+  --sds-color-background-brand-default: #{dark.$sds-dark-background-brand-default};
+  --sds-color-background-brand-hover: #{dark.$sds-dark-background-brand-hover};
+  --sds-color-background-brand-secondary: #{dark.$sds-dark-background-brand-secondary};
+  --sds-color-background-brand-secondary-hover: #{dark.$sds-dark-background-brand-secondary-hover};
+  --sds-color-background-brand-tertiary: #{dark.$sds-dark-background-brand-tertiary};
+  --sds-color-background-brand-tertiary-hover: #{dark.$sds-dark-background-brand-tertiary-hover};
+  --sds-color-background-positive-default: #{dark.$sds-dark-background-positive-default};
+  --sds-color-background-positive-hover: #{dark.$sds-dark-background-positive-hover};
+  --sds-color-background-positive-secondary: #{dark.$sds-dark-background-positive-secondary};
+  --sds-color-background-positive-secondary-hover: #{dark.$sds-dark-background-positive-secondary-hover};
+  --sds-color-background-positive-tertiary: #{dark.$sds-dark-background-positive-tertiary};
+  --sds-color-background-positive-tertiary-hover: #{dark.$sds-dark-background-positive-tertiary-hover};
+  --sds-color-background-warning-default: #{dark.$sds-dark-background-warning-default};
+  --sds-color-background-warning-hover: #{dark.$sds-dark-background-warning-hover};
+  --sds-color-background-warning-secondary: #{dark.$sds-dark-background-warning-secondary};
+  --sds-color-background-warning-secondary-hover: #{dark.$sds-dark-background-warning-secondary-hover};
+  --sds-color-background-warning-tertiary: #{dark.$sds-dark-background-warning-tertiary};
+  --sds-color-background-warning-tertiary-hover: #{dark.$sds-dark-background-warning-tertiary-hover};
+  --sds-color-background-danger-default: #{dark.$sds-dark-background-danger-default};
+  --sds-color-background-danger-hover: #{dark.$sds-dark-background-danger-hover};
+  --sds-color-background-danger-secondary: #{dark.$sds-dark-background-danger-secondary};
+  --sds-color-background-danger-secondary-hover: #{dark.$sds-dark-background-danger-secondary-hover};
+  --sds-color-background-danger-tertiary: #{dark.$sds-dark-background-danger-tertiary};
+  --sds-color-background-danger-tertiary-hover: #{dark.$sds-dark-background-danger-tertiary-hover};
+  --sds-color-background-disabled-default: #{dark.$sds-dark-background-disabled-default};
+  --sds-color-background-utilities-scrim: #{dark.$sds-dark-background-utilities-scrim};
+  --sds-color-background-utilities-blanket: #{dark.$sds-dark-background-utilities-blanket};
+  --sds-color-background-utilities-overlay: #{dark.$sds-dark-background-utilities-overlay};
+  --sds-color-background-utilities-measurement: #{dark.$sds-dark-background-utilities-measurement};
+
+  // Color Text
+  --sds-color-text-default-default: #{dark.$sds-dark-text-default-default};
+  --sds-color-text-default-secondary: #{dark.$sds-dark-text-default-secondary};
+  --sds-color-text-default-tertiary: #{dark.$sds-dark-text-default-tertiary};
+  --sds-color-text-neutral-default: #{dark.$sds-dark-text-neutral-default};
+  --sds-color-text-neutral-secondary: #{dark.$sds-dark-text-neutral-secondary};
+  --sds-color-text-neutral-tertiary: #{dark.$sds-dark-text-neutral-tertiary};
+  --sds-color-text-neutral-on-neutral: #{dark.$sds-dark-text-neutral-on-neutral};
+  --sds-color-text-neutral-on-neutral-secondary: #{dark.$sds-dark-text-neutral-on-neutral-secondary};
+  --sds-color-text-neutral-on-neutral-tertiary: #{dark.$sds-dark-text-neutral-on-neutral-tertiary};
+  --sds-color-text-brand-default: #{dark.$sds-dark-text-brand-default};
+  --sds-color-text-brand-secondary: #{dark.$sds-dark-text-brand-secondary};
+  --sds-color-text-brand-tertiary: #{dark.$sds-dark-text-brand-tertiary};
+  --sds-color-text-brand-on-brand: #{dark.$sds-dark-text-brand-on-brand};
+  --sds-color-text-brand-on-brand-secondary: #{dark.$sds-dark-text-brand-on-brand-secondary};
+  --sds-color-text-brand-on-brand-tertiary: #{dark.$sds-dark-text-brand-on-brand-tertiary};
+  --sds-color-text-positive-default: #{dark.$sds-dark-text-positive-default};
+  --sds-color-text-positive-secondary: #{dark.$sds-dark-text-positive-secondary};
+  --sds-color-text-positive-tertiary: #{dark.$sds-dark-text-positive-tertiary};
+  --sds-color-text-positive-on-positive: #{dark.$sds-dark-text-positive-on-positive};
+  --sds-color-text-positive-on-positive-secondary: #{dark.$sds-dark-text-positive-on-positive-secondary};
+  --sds-color-text-positive-on-positive-tertiary: #{dark.$sds-dark-text-positive-on-positive-tertiary};
+  --sds-color-text-warning-default: #{dark.$sds-dark-text-warning-default};
+  --sds-color-text-warning-secondary: #{dark.$sds-dark-text-warning-secondary};
+  --sds-color-text-warning-tertiary: #{dark.$sds-dark-text-warning-tertiary};
+  --sds-color-text-warning-on-warning: #{dark.$sds-dark-text-warning-on-warning};
+  --sds-color-text-warning-on-warning-secondary: #{dark.$sds-dark-text-warning-on-warning-secondary};
+  --sds-color-text-warning-on-warning-tertiary: #{dark.$sds-dark-text-warning-on-warning-tertiary};
+  --sds-color-text-danger-default: #{dark.$sds-dark-text-danger-default};
+  --sds-color-text-danger-secondary: #{dark.$sds-dark-text-danger-secondary};
+  --sds-color-text-danger-tertiary: #{dark.$sds-dark-text-danger-tertiary};
+  --sds-color-text-danger-on-danger: #{dark.$sds-dark-text-danger-on-danger};
+  --sds-color-text-danger-on-danger-secondary: #{dark.$sds-dark-text-danger-on-danger-secondary};
+  --sds-color-text-danger-on-danger-tertiary: #{dark.$sds-dark-text-danger-on-danger-tertiary};
+  --sds-color-text-disabled-default: #{dark.$sds-dark-text-disabled-default};
+  --sds-color-text-disabled-on-disabled: #{dark.$sds-dark-text-disabled-on-disabled};
+  --sds-color-text-utilities-text-on-overlay: #{dark.$sds-dark-text-utilities-text-on-overlay};
+  --sds-color-text-utilities-text-on-measurement: #{dark.$sds-dark-text-utilities-text-on-measurement};
+
+  // Color Border
+  --sds-color-border-default-default: #{dark.$sds-dark-border-default-default};
+  --sds-color-border-default-secondary: #{dark.$sds-dark-border-default-secondary};
+  --sds-color-border-default-tertiary: #{dark.$sds-dark-border-default-tertiary};
+  --sds-color-border-neutral-default: #{dark.$sds-dark-border-neutral-default};
+  --sds-color-border-neutral-secondary: #{dark.$sds-dark-border-neutral-secondary};
+  --sds-color-border-neutral-tertiary: #{dark.$sds-dark-border-neutral-tertiary};
+  --sds-color-border-brand-default: #{dark.$sds-dark-border-brand-default};
+  --sds-color-border-brand-secondary: #{dark.$sds-dark-border-brand-secondary};
+  --sds-color-border-brand-tertiary: #{dark.$sds-dark-border-brand-tertiary};
+  --sds-color-border-positive-default: #{dark.$sds-dark-border-positive-default};
+  --sds-color-border-positive-secondary: #{dark.$sds-dark-border-positive-secondary};
+  --sds-color-border-positive-tertiary: #{dark.$sds-dark-border-positive-tertiary};
+  --sds-color-border-warning-default: #{dark.$sds-dark-border-warning-default};
+  --sds-color-border-warning-secondary: #{dark.$sds-dark-border-warning-secondary};
+  --sds-color-border-warning-tertiary: #{dark.$sds-dark-border-warning-tertiary};
+  --sds-color-border-danger-default: #{dark.$sds-dark-border-danger-default};
+  --sds-color-border-danger-secondary: #{dark.$sds-dark-border-danger-secondary};
+  --sds-color-border-danger-tertiary: #{dark.$sds-dark-border-danger-tertiary};
+  --sds-color-border-disabled-default: #{dark.$sds-dark-border-disabled-default};
+  --sds-color-border-utilities-measurement: #{dark.$sds-dark-border-utilities-measurement};
+  --sds-color-border-utilities-swatch: #{dark.$sds-dark-border-utilities-swatch};
+
+  // Color Icon
+  --sds-color-icon-default-default: #{dark.$sds-dark-icon-default-default};
+  --sds-color-icon-default-secondary: #{dark.$sds-dark-icon-default-secondary};
+  --sds-color-icon-default-tertiary: #{dark.$sds-dark-icon-default-tertiary};
+  --sds-color-icon-neutral-default: #{dark.$sds-dark-icon-neutral-default};
+  --sds-color-icon-neutral-secondary: #{dark.$sds-dark-icon-neutral-secondary};
+  --sds-color-icon-neutral-tertiary: #{dark.$sds-dark-icon-neutral-tertiary};
+  --sds-color-icon-neutral-on-neutral: #{dark.$sds-dark-icon-neutral-on-neutral};
+  --sds-color-icon-neutral-on-neutral-secondary: #{dark.$sds-dark-icon-neutral-on-neutral-secondary};
+  --sds-color-icon-neutral-on-neutral-tertiary: #{dark.$sds-dark-icon-neutral-on-neutral-tertiary};
+  --sds-color-icon-brand-default: #{dark.$sds-dark-icon-brand-default};
+  --sds-color-icon-brand-secondary: #{dark.$sds-dark-icon-brand-secondary};
+  --sds-color-icon-brand-tertiary: #{dark.$sds-dark-icon-brand-tertiary};
+  --sds-color-icon-brand-on-brand: #{dark.$sds-dark-icon-brand-on-brand};
+  --sds-color-icon-brand-on-brand-secondary: #{dark.$sds-dark-icon-brand-on-brand-secondary};
+  --sds-color-icon-brand-on-brand-tertiary: #{dark.$sds-dark-icon-brand-on-brand-tertiary};
+  --sds-color-icon-positive-default: #{dark.$sds-dark-icon-positive-default};
+  --sds-color-icon-positive-secondary: #{dark.$sds-dark-icon-positive-secondary};
+  --sds-color-icon-positive-tertiary: #{dark.$sds-dark-icon-positive-tertiary};
+  --sds-color-icon-positive-on-positive: #{dark.$sds-dark-icon-positive-on-positive};
+  --sds-color-icon-positive-on-positive-secondary: #{dark.$sds-dark-icon-positive-on-positive-secondary};
+  --sds-color-icon-positive-on-positive-tertiary: #{dark.$sds-dark-icon-positive-on-positive-tertiary};
+  --sds-color-icon-warning-default: #{dark.$sds-dark-icon-warning-default};
+  --sds-color-icon-warning-secondary: #{dark.$sds-dark-icon-warning-secondary};
+  --sds-color-icon-warning-tertiary: #{dark.$sds-dark-icon-warning-tertiary};
+  --sds-color-icon-warning-on-warning: #{dark.$sds-dark-icon-warning-on-warning};
+  --sds-color-icon-warning-on-warning-secondary: #{dark.$sds-dark-icon-warning-on-warning-secondary};
+  --sds-color-icon-warning-on-warning-tertiary: #{dark.$sds-dark-icon-warning-on-warning-tertiary};
+  --sds-color-icon-danger-default: #{dark.$sds-dark-icon-danger-default};
+  --sds-color-icon-danger-secondary: #{dark.$sds-dark-icon-danger-secondary};
+  --sds-color-icon-danger-tertiary: #{dark.$sds-dark-icon-danger-tertiary};
+  --sds-color-icon-danger-on-danger: #{dark.$sds-dark-icon-danger-on-danger};
+  --sds-color-icon-danger-on-danger-secondary: #{dark.$sds-dark-icon-danger-on-danger-secondary};
+  --sds-color-icon-danger-on-danger-tertiary: #{dark.$sds-dark-icon-danger-on-danger-tertiary};
+  --sds-color-icon-disabled-default: #{dark.$sds-dark-icon-disabled-default};
+  --sds-color-icon-disabled-on-disabled: #{dark.$sds-dark-icon-disabled-on-disabled};
+  --sds-color-icon-utilities-icon: #{dark.$sds-dark-icon-utilities-icon};
+  --sds-color-icon-utilities-icon-on-measurement: #{dark.$sds-dark-icon-utilities-icon-on-measurement};
+}
