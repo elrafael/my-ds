@@ -1,0 +1,12 @@
+$color-primary: #007bff;
+:host {
+  display: block;
+
+  .box {
+    color: $color-primary;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
