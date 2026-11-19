@@ -45,7 +45,11 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil-test --prod",
     "test:watch": "stencil-test --prod --watch",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "build:watch": "stencil build --dev --watch",
+    "storybook": "storybook dev -p 6006",
+    "storybook:dev": "concurrently \"stencil build --dev --watch\" \"storybook dev -p 6006\"",
+    "build-storybook": "npm run build && storybook build"
   },
   "devDependencies": {
     "@fontsource-variable/inter": "^5.3.0",
@@ -53,9 +57,15 @@
     "@stencil/core": "^4.27.1 || ^5.0.0-0",
     "@stencil/sass": "^3.3.3",
     "@stencil/vitest": "^1.8.3",
+    "@storybook/addon-a11y": "^10.6.7",
+    "@storybook/addon-docs": "^10.6.7",
+    "@storybook/web-components-vite": "^10.6.7",
     "@types/node": "^22.13.5",
     "@vitest/browser-playwright": "^4.0.0",
+    "concurrently": "^10.0.7",
+    "lit": "latest",
     "playwright": "^1.52.0",
+    "storybook": "^10.6.7",
     "vitest": "^4.0.0"
   },
   "license": "MIT"
