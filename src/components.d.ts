@@ -6,7 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonHierarchy, ButtonSize, ButtonVariant } from "./components/ds-button/ds-button";
+import { InputSize, InputType } from "./components/ds-input/ds-input";
 export { ButtonHierarchy, ButtonSize, ButtonVariant } from "./components/ds-button/ds-button";
+export { InputSize, InputType } from "./components/ds-input/ds-input";
 export namespace Components {
     interface DsButton {
         /**
@@ -35,6 +37,67 @@ export namespace Components {
          */
         "variant": ButtonVariant | 'primary';
     }
+    interface DsInput {
+        /**
+          * Indica se o campo está desabilitado.
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * Mensagem de erro de validação exibida abaixo do campo. Quando definida, ativa automaticamente o estado de erro/invalid.
+         */
+        "errorMessage"?: string;
+        /**
+          * Texto de ajuda exibido abaixo do campo.
+         */
+        "helperText"?: string;
+        /**
+          * Indica se o campo está em estado de erro visual (inválido).
+          * @default false
+         */
+        "invalid": boolean;
+        /**
+          * Label textual exibido acima do campo de entrada.
+         */
+        "label"?: string;
+        /**
+          * Nome do campo para envio em formulários.
+         */
+        "name"?: string;
+        /**
+          * Texto de placeholder exibido quando o campo está vazio.
+         */
+        "placeholder"?: string;
+        /**
+          * Indica se o campo é somente leitura.
+          * @default false
+         */
+        "readonly": boolean;
+        /**
+          * Indica se o preenchimento do campo é obrigatório.
+          * @default false
+         */
+        "required": boolean;
+        /**
+          * Tamanho do controle: 'sm' | 'md' | 'lg'.
+          * @default 'md'
+         */
+        "size": InputSize;
+        /**
+          * Tipo nativo do input HTML.
+          * @default 'text'
+         */
+        "type": InputType;
+        /**
+          * Valor atual do campo.
+          * @default ''
+         */
+        "value": string;
+    }
+}
+export interface DsInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLDsInputElement;
 }
 declare global {
     interface HTMLDsButtonElement extends Components.DsButton, HTMLStencilElement {
@@ -43,8 +106,29 @@ declare global {
         prototype: HTMLDsButtonElement;
         new (): HTMLDsButtonElement;
     };
+    interface HTMLDsInputElementEventMap {
+        "dsInput": string;
+        "dsChange": string;
+        "dsFocus": FocusEvent;
+        "dsBlur": FocusEvent;
+    }
+    interface HTMLDsInputElement extends Components.DsInput, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLDsInputElementEventMap>(type: K, listener: (this: HTMLDsInputElement, ev: DsInputCustomEvent<HTMLDsInputElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLDsInputElementEventMap>(type: K, listener: (this: HTMLDsInputElement, ev: DsInputCustomEvent<HTMLDsInputElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLDsInputElement: {
+        prototype: HTMLDsInputElement;
+        new (): HTMLDsInputElement;
+    };
     interface HTMLElementTagNameMap {
         "ds-button": HTMLDsButtonElement;
+        "ds-input": HTMLDsInputElement;
     }
 }
 declare namespace LocalJSX {
@@ -75,6 +159,79 @@ declare namespace LocalJSX {
          */
         "variant"?: ButtonVariant | 'primary';
     }
+    interface DsInput {
+        /**
+          * Indica se o campo está desabilitado.
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * Mensagem de erro de validação exibida abaixo do campo. Quando definida, ativa automaticamente o estado de erro/invalid.
+         */
+        "errorMessage"?: string;
+        /**
+          * Texto de ajuda exibido abaixo do campo.
+         */
+        "helperText"?: string;
+        /**
+          * Indica se o campo está em estado de erro visual (inválido).
+          * @default false
+         */
+        "invalid"?: boolean;
+        /**
+          * Label textual exibido acima do campo de entrada.
+         */
+        "label"?: string;
+        /**
+          * Nome do campo para envio em formulários.
+         */
+        "name"?: string;
+        /**
+          * Disparado quando o input perde o foco.
+         */
+        "onDsBlur"?: (event: DsInputCustomEvent<FocusEvent>) => void;
+        /**
+          * Disparado quando o valor é confirmado (commit / blur / enter).
+         */
+        "onDsChange"?: (event: DsInputCustomEvent<string>) => void;
+        /**
+          * Disparado quando o input recebe foco.
+         */
+        "onDsFocus"?: (event: DsInputCustomEvent<FocusEvent>) => void;
+        /**
+          * Disparado a cada alteração de caractere digitada pelo usuário.
+         */
+        "onDsInput"?: (event: DsInputCustomEvent<string>) => void;
+        /**
+          * Texto de placeholder exibido quando o campo está vazio.
+         */
+        "placeholder"?: string;
+        /**
+          * Indica se o campo é somente leitura.
+          * @default false
+         */
+        "readonly"?: boolean;
+        /**
+          * Indica se o preenchimento do campo é obrigatório.
+          * @default false
+         */
+        "required"?: boolean;
+        /**
+          * Tamanho do controle: 'sm' | 'md' | 'lg'.
+          * @default 'md'
+         */
+        "size"?: InputSize;
+        /**
+          * Tipo nativo do input HTML.
+          * @default 'text'
+         */
+        "type"?: InputType;
+        /**
+          * Valor atual do campo.
+          * @default ''
+         */
+        "value"?: string;
+    }
 
     interface DsButtonAttributes {
         "variant": ButtonVariant | 'primary';
@@ -83,9 +240,24 @@ declare namespace LocalJSX {
         "disabled": boolean;
         "type": 'button' | 'submit' | 'reset';
     }
+    interface DsInputAttributes {
+        "label": string;
+        "placeholder": string;
+        "value": string;
+        "type": InputType;
+        "size": InputSize;
+        "disabled": boolean;
+        "readonly": boolean;
+        "required": boolean;
+        "name": string;
+        "helperText": string;
+        "errorMessage": string;
+        "invalid": boolean;
+    }
 
     interface IntrinsicElements {
         "ds-button": Omit<DsButton, keyof DsButtonAttributes> & { [K in keyof DsButton & keyof DsButtonAttributes]?: DsButton[K] } & { [K in keyof DsButton & keyof DsButtonAttributes as `attr:${K}`]?: DsButtonAttributes[K] } & { [K in keyof DsButton & keyof DsButtonAttributes as `prop:${K}`]?: DsButton[K] };
+        "ds-input": Omit<DsInput, keyof DsInputAttributes> & { [K in keyof DsInput & keyof DsInputAttributes]?: DsInput[K] } & { [K in keyof DsInput & keyof DsInputAttributes as `attr:${K}`]?: DsInputAttributes[K] } & { [K in keyof DsInput & keyof DsInputAttributes as `prop:${K}`]?: DsInput[K] };
     }
 }
 export { LocalJSX as JSX };
@@ -93,6 +265,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ds-button": LocalJSX.IntrinsicElements["ds-button"] & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
+            "ds-input": LocalJSX.IntrinsicElements["ds-input"] & JSXBase.HTMLAttributes<HTMLDsInputElement>;
         }
     }
 }
