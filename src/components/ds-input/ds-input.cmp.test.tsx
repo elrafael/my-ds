@@ -85,4 +85,25 @@ describe('ds-input', () => {
 
     expect(changedValue).toBe('Jane Doe');
   });
+
+  it('renders search input with search icon and classes when type is search', async () => {
+    const { root } = await render(<ds-input type="search" placeholder="Keywords" />);
+    const input = root.shadowRoot?.querySelector('input');
+    const container = root.shadowRoot?.querySelector('.ds-input-container');
+    const icon = root.shadowRoot?.querySelector('.ds-input__search-icon');
+    const svg = icon?.querySelector('svg');
+
+    expect(input?.getAttribute('type')).toBe('search');
+    expect(input?.classList.contains('ds-input__field--search')).toBe(true);
+    expect(container?.classList.contains('ds-input-container--search')).toBe(true);
+    expect(icon).not.toBeNull();
+    expect(svg).not.toBeNull();
+  });
+
+  it('does not render search icon when type is text', async () => {
+    const { root } = await render(<ds-input type="text" placeholder="Value" />);
+    const icon = root.shadowRoot?.querySelector('.ds-input__search-icon');
+
+    expect(icon).toBeNull();
+  });
 });

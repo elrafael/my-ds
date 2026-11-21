@@ -77,22 +77,22 @@ export class DsInput {
   /**
    * Disparado a cada alteração de caractere digitada pelo usuário.
    */
-  @Event() dsInput: EventEmitter<string>;
+  @Event() dsInput!: EventEmitter<string>;
 
   /**
    * Disparado quando o valor é confirmado (commit / blur / enter).
    */
-  @Event() dsChange: EventEmitter<string>;
+  @Event() dsChange!: EventEmitter<string>;
 
   /**
    * Disparado quando o input recebe foco.
    */
-  @Event() dsFocus: EventEmitter<FocusEvent>;
+  @Event() dsFocus!: EventEmitter<FocusEvent>;
 
   /**
    * Disparado quando o input perde o foco.
    */
-  @Event() dsBlur: EventEmitter<FocusEvent>;
+  @Event() dsBlur!: EventEmitter<FocusEvent>;
 
   private handleInput = (event: Event) => {
     const target = event.target as HTMLInputElement;
@@ -116,10 +116,12 @@ export class DsInput {
 
   render() {
     const isInvalid = this.invalid || Boolean(this.errorMessage);
+    const isSearch = this.type === 'search';
 
     const containerClasses = [
       'ds-input-container',
       `ds-input-container--${this.size}`,
+      isSearch ? 'ds-input-container--search' : '',
       this.disabled ? 'ds-input-container--disabled' : '',
       isInvalid ? 'ds-input-container--invalid' : '',
     ].filter(Boolean).join(' ');
@@ -127,6 +129,7 @@ export class DsInput {
     const inputClasses = [
       'ds-input__field',
       `ds-input__field--${this.size}`,
+      isSearch ? 'ds-input__field--search' : '',
       isInvalid ? 'ds-input__field--invalid' : '',
     ].filter(Boolean).join(' ');
 
@@ -163,6 +166,18 @@ export class DsInput {
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
           />
+          {isSearch && (
+            <span class="ds-input__search-icon" aria-hidden="true" part="search-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+                <path d="M20 20L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </span>
+          )}
         </div>
 
         {this.errorMessage ? (

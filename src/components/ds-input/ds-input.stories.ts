@@ -240,3 +240,75 @@ export const ShippingInformationForm: Story = {
     </div>
   `,
 };
+
+/**
+ * Campo de busca com formato pill e ícone de lupa, conforme o design do Figma.
+ */
+export const Search: Story = {
+  args: {
+    type: 'search',
+    placeholder: 'Keywords',
+    label: undefined,
+  },
+};
+
+/**
+ * Demonstração do menu de filtros completo com o campo de busca arredondado.
+ */
+export const FilterMenu: Story = {
+  render: () => html`
+    <div style="font-family: var(--sds-typography-body-font-family, sans-serif); max-width: 300px;">
+      <span style="font-size: 11px; color: #9ca3af; margin-bottom: 8px; display: block;">Filter Menu</span>
+      <div
+        style="
+          border: 1px solid var(--sds-color-border-default-default, #d1d5db);
+          border-radius: 16px;
+          padding: 20px;
+          background: #fff;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        "
+      >
+        <ds-input type="search" placeholder="Keywords"></ds-input>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <label style="display: flex; align-items: center; gap: 10px; font-size: 16px; color: #111827; cursor: pointer;">
+            <input type="checkbox" checked style="width: 18px; height: 18px; accent-color: #111827;" />
+            <span>Label</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 10px; font-size: 16px; color: #111827; cursor: pointer;">
+            <input type="checkbox" checked style="width: 18px; height: 18px; accent-color: #111827;" />
+            <span>Label</span>
+          </label>
+        </div>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 16px; color: #111827; margin-bottom: 12px;">
+            <span>Label</span>
+            <span style="font-size: 14px;">$0-100</span>
+          </div>
+          <div style="position: relative; height: 6px; background: #e5e7eb; border-radius: 3px; display: flex; align-items: center;">
+            <div style="position: absolute; left: 0; width: 14px; height: 14px; border-radius: 50%; background: #1f2937;"></div>
+            <div style="position: absolute; right: 0; width: 14px; height: 14px; border-radius: 50%; background: #1f2937;"></div>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="margin: 0 0 12px 0; font-size: 16px; font-weight: 500; color: #111827;">Color</h4>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <label style="display: flex; align-items: center; gap: 10px; font-size: 16px; color: #111827; cursor: pointer;">
+              <input type="checkbox" checked style="width: 18px; height: 18px; accent-color: #111827;" />
+              <span>Label</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 10px; font-size: 16px; color: #111827; cursor: pointer;">
+              <input type="checkbox" checked style="width: 18px; height: 18px; accent-color: #111827;" />
+              <span>Label</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+};
+

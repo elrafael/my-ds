@@ -33,6 +33,13 @@
 | `dsInput`  | Disparado a cada alteração de caractere digitada pelo usuário. | `CustomEvent<string>`     |
 
 
+## Shadow Parts
+
+| Part            | Description |
+| --------------- | ----------- |
+| `"search-icon"` |             |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
